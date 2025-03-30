@@ -8,6 +8,7 @@
   - [x] Set up strict mode
   - [x] Configure module resolution
   - [x] Add path aliases
+  - [x] Configure ESM support
 - [x] Set up ESLint and Prettier
   - [x] Configure Airbnb style guide
   - [x] Add TypeScript parser
@@ -63,6 +64,14 @@
   - [x] JSDoc comments
   - [x] Type definitions
   - [x] Error documentation
+- [x] Create database schema
+  - [x] Emails table with indexes
+  - [x] Links table with indexes
+  - [x] Triggers for updated_at
+- [x] Test database connection
+  - [x] Create test script
+  - [x] Verify table creation
+  - [x] Test basic operations
 
 ### Step 3: Google OAuth Authentication
 - [ ] Set up Google OAuth 2.0 client
