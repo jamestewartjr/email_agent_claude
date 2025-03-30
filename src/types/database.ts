@@ -3,6 +3,15 @@
  */
 
 /**
+ * Represents attachment metadata
+ */
+export interface AttachmentInfo {
+  filename: string;
+  mime_type: string;
+  size: number;
+}
+
+/**
  * Represents an email record in the database
  */
 export interface Email {
@@ -28,15 +37,6 @@ export interface Link {
   categories: string[];
   email_id: string;
   created_at: Date;
-}
-
-/**
- * Represents attachment metadata
- */
-export interface AttachmentInfo {
-  filename: string;
-  mime_type: string;
-  size: number;
 }
 
 /**
@@ -85,4 +85,4 @@ export class DatabaseError extends Error {
     super(message);
     this.name = 'DatabaseError';
   }
-} 
+}

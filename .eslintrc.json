@@ -20,18 +20,32 @@
       "error",
       "ignorePackages",
       {
-        "ts": "never"
+        "ts": "never",
+        "js": "never"
       }
     ],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error", { "classes": false }]
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".ts"]
+        "extensions": [".ts", ".js"],
+        "moduleDirectory": ["node_modules", "src"]
+      },
+      "typescript": {}
+    }
+  },
+  "overrides": [
+    {
+      "files": ["src/scripts/**/*.ts"],
+      "rules": {
+        "no-console": "off"
       }
     }
-  }
+  ]
 } 

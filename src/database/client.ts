@@ -2,31 +2,18 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { DatabaseError, DatabaseErrorType } from '../types/database.js';
 
 /**
- * Singleton class for managing Supabase client connection
+ * Creates and manages a Supabase client connection
  */
-export class SupabaseConnection {
-  private static instance: SupabaseConnection;
-  private client: SupabaseClient | null = null;
-
-  private constructor() {}
-
-  /**
-   * Get the singleton instance of SupabaseConnection
-   */
-  public static getInstance(): SupabaseConnection {
-    if (!SupabaseConnection.instance) {
-      SupabaseConnection.instance = new SupabaseConnection();
-    }
-    return SupabaseConnection.instance;
-  }
+const createSupabaseConnection = () => {
+  let client: SupabaseClient | null = null;
 
   /**
    * Initialize the Supabase client connection
    * @throws {DatabaseError} If connection fails or environment variables are missing
    */
-  public initialize(): SupabaseClient {
-    if (this.client) {
-      return this.client;
+  const initialize = (): SupabaseClient => {
+    if (client) {
+      return client;
     }
 
     const url = process.env.SUPABASE_URL;
@@ -40,8 +27,8 @@ export class SupabaseConnection {
     }
 
     try {
-      this.client = createClient(url, key);
-      return this.client;
+      client = createClient(url, key);
+      return client;
     } catch (error) {
       throw new DatabaseError(
         DatabaseErrorType.CONNECTION_ERROR,
@@ -49,27 +36,36 @@ export class SupabaseConnection {
         error,
       );
     }
-  }
+  };
 
   /**
    * Get the Supabase client instance
    * @throws {DatabaseError} If client is not initialized
    */
-  public getClient(): SupabaseClient {
-    if (!this.client) {
+  const getClient = (): SupabaseClient => {
+    if (!client) {
       throw new DatabaseError(
         DatabaseErrorType.CONNECTION_ERROR,
         'Supabase client not initialized. Call initialize() first.',
       );
     }
-    return this.client;
-  }
+    return client;
+  };
 
   /**
    * Close the Supabase client connection
    * This is mainly used for testing purposes
    */
-  public closeConnection(): void {
-    this.client = null;
-  }
-} 
+  const closeConnection = (): void => {
+    client = null;
+  };
+
+  return {
+    initialize,
+    getClient,
+    closeConnection,
+  };
+};
+
+// Create a singleton instance
+export const supabaseConnection = createSupabaseConnection();
