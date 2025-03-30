@@ -6,8 +6,8 @@ import {
   LinkFilter,
   DatabaseError,
   DatabaseErrorType,
-} from '../types/database.js';
-import { supabaseConnection } from './client.js';
+} from '../types/database';
+import { supabaseConnection } from './client';
 
 type DatabaseResult<T> = Promise<T>;
 type DatabaseOperation<T> = (client: SupabaseClient) => DatabaseResult<T>;

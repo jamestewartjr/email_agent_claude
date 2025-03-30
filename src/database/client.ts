@@ -1,5 +1,5 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { DatabaseError, DatabaseErrorType } from '../types/database.js';
+import { DatabaseError, DatabaseErrorType } from '../types/database';
 
 /**
  * Creates and manages a Supabase client connection

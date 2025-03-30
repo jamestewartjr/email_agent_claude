@@ -105,7 +105,7 @@
 ## Phase 2: Core Functionality
 
 ### Step 5: Email Processing and Link Extraction
-- [ ] Create EmailProcessor class
+- [ ] Create Email Processor functions
 - [ ] Implement HTML parsing with Cheerio
 - [ ] Add regex-based extraction for plain text
 - [ ] Create URL normalization functions
@@ -116,7 +116,7 @@
 - [ ] Add documentation and type definitions
 
 ### Step 6: Basic Link Categorization
-- [ ] Create LinkCategorizer class
+- [ ] Create Link Categorizer functions
 - [ ] Implement categorization rules:
   - [ ] Domain-based categorization
   - [ ] Keyword-based categorization
@@ -128,7 +128,7 @@
 - [ ] Add error handling and logging
 
 ### Step 7: Email Processing Pipeline
-- [ ] Create EmailProcessingPipeline class
+- [ ] Create EmailProcessingPipeline functions
 - [ ] Implement end-to-end processing flow
 - [ ] Add batch processing capabilities
 - [ ] Create resumable processing system
@@ -200,7 +200,7 @@
 ## Phase 4: Enhanced Features
 
 ### Step 11: Enhanced Link Analysis
-- [ ] Create LinkAnalyzer class
+- [ ] Create LinkAnalyzer functions
 - [ ] Implement metadata extraction:
   - [ ] Title and description
   - [ ] OpenGraph data
@@ -215,7 +215,7 @@
 - [ ] Add rate limiting for external requests
 
 ### Step 12: Simple Search Implementation
-- [ ] Create Search class
+- [ ] Create Search functions
 - [ ] Implement keyword search across emails and links
 - [ ] Add result ranking by relevance
 - [ ] Implement filtering options
@@ -227,7 +227,7 @@
 - [ ] Add search API endpoints
 
 ### Step 13: Email and Link Statistics
-- [ ] Create Statistics class
+- [ ] Create Statistics functions
 - [ ] Implement statistics generation:
   - [ ] Email volume over time
   - [ ] Top senders
@@ -244,7 +244,7 @@
 - [ ] Write unit tests
 
 ### Step 14: User Preferences and Settings
-- [ ] Create UserPreferences class and database table
+- [ ] Create UserPreferences functions and database table
 - [ ] Implement preference management:
   - [ ] Processing options
   - [ ] Scanning frequency
@@ -276,7 +276,7 @@
 - [ ] Write unit tests
 
 ### Step 16: Basic Chatbot Interface
-- [ ] Create ChatInterface class
+- [ ] Create ChatInterface functions
 - [ ] Implement question processing:
   - [ ] Extract search terms
   - [ ] Identify question intent

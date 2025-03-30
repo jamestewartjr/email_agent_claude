@@ -58,7 +58,7 @@ email-research-bot/
 - Input validation and sanitization
 
 ### 3.5 Error Handling
-- Custom error classes
+- Custom error functions
 - Centralized error handling
 - Detailed logging
 - Graceful degradation
